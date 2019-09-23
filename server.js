@@ -6,6 +6,7 @@ path = require('path')
 cors = require("cors")
 bodyParser = require("body-parser")
 logger = require("morgan")
+const proxy = require("http-proxy-middleware")
 port = process.env.PORT || 5000;
 
 
@@ -33,4 +34,8 @@ app.listen( port, () => {
     console.log("Runnning on " + port)
 })
 
-module.exports = app
+module.exports = function(app) {
+    app.use(
+      proxy(["/api", , "/otherApi"], { target: "http://localhost:5000" })
+    );
+  }
