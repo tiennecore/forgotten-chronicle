@@ -6,7 +6,6 @@ path = require('path')
 cors = require("cors")
 bodyParser = require("body-parser")
 logger = require("morgan")
-domain = 'http://localhost:5000'
 port = process.env.PORT || 5000;
 
 
@@ -28,12 +27,7 @@ app.use(express.static(path.join(__dirname, '/src')));
 app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/public/index.html'));
 });
-app.get("/home", (req,res)=> {
-    var user1={name:"etienne"}
-    var user2={name:"quentin"}
-    res.json([user1])
-    res.end()
-  })
+
 //app listen on localhost:5000
 app.listen( port, () => {
     console.log("Runnning on " + port)

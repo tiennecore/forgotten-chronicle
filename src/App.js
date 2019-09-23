@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+
+
 import './App.css';
 
 class App extends Component {
+  
   constructor(){
     super()
     this.state = {
@@ -9,8 +12,10 @@ class App extends Component {
       race : []
     }
   }
+
   componentDidMount() {
-    fetch("http://localhost:5000/races")
+    var stringrequest="http://localhost:5000/api/races" || "/api/races"
+    fetch(stringrequest)
     .then(response => response.json())
     .then( responseJson=> {
       this.setState({
@@ -23,8 +28,8 @@ class App extends Component {
   render (){
     return (
       <div>
-        <p>this app {this.state.isloading ? "is loading" : "is load"}</p>
-
+        <p>this app {this.state.isloading ? "is loading" : this.state.race.map(Element => console.log(Element))}</p>
+        
       </div>
     );
   }

@@ -1,3 +1,4 @@
 import react from 'react'
 
-module.exports = footer
+
+module.exports = header
