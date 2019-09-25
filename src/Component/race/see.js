@@ -17,11 +17,11 @@ class SeeRaces extends Component {
     
   
     componentDidMount() {
-      var stringrequest="http://localhost:5000/api/races" || "/api/races"
+      var stringrequest="/api/races"
       fetch(stringrequest)
       .then(response => response.json())
       .then( responseJson=> {
-        console.log(responseJson)
+        console.log(stringrequest)
         this.setState({load:true,races:responseJson})
 
       })
