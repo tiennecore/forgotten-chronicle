@@ -1,6 +1,7 @@
 //express part
 express = require('express')
 app = express()
+router= require('./routes/races')
 bodyParser = require("body-parser")
 logger = require("morgan")
 port = process.env.PORT || 5000;
