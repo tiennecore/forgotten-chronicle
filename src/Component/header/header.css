@@ -1,0 +1,16 @@
+.navbarMenu{
+    position: fixed;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+.iconMenu{
+    text-align: center;
+
+    width:20%;
+}
+.titreMenu{
+    width: 80%;
+    text-align: center
+}

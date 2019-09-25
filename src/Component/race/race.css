@@ -1,0 +1,21 @@
+.racesDiv{
+    display: flex;
+    flex-direction: column;
+}
+.raceDiv{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px #D3D3D3 solid;
+}
+.NameRace{
+    vertical-align: middle;
+    text-align: center;
+    width: 75%;
+}
+.infoRaceDiv{
+
+}
