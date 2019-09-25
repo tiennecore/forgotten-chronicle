@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.2"
+    "react-icons": "^3.7.0",
+    "react-scripts": "3.1.2",
+    "react-spinners": "^0.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,5 +30,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:5000"
+  "proxy": "http://localhost:5000"
 }
