@@ -24,7 +24,7 @@ class SeeRaces extends Component {
         console.log(responseJson)
         this.setState({load:true,races:responseJson})
 
-      },)
+      })
     }
   
   render (){
