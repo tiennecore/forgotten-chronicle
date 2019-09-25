@@ -98,6 +98,7 @@ router.get('/api/races',(req,res) => {
           res.sendStatus(500)
           return
         }
+        console.log("suceed")
         res.json(result)
         res.end()
 
