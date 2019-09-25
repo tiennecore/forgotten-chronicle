@@ -21,7 +21,9 @@ class SeeRaces extends Component {
       fetch(stringrequest)
       .then(response => response.json())
       .then( responseJson=> {
+        console.log(responseJson)
         this.setState({load:true,races:responseJson})
+
       },)
     }
   
