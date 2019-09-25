@@ -1,44 +1,19 @@
 {
-  "name": "forgotten_chronicle",
-  "version": "0.1.0",
-  "private": true,
-  "main": "server.js",
+  "name": "servchroniqueoublie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
     "morgan": "^1.9.1",
-    "mysql": "^2.17.1",
-    "nodemon": "^1.19.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-icons": "^3.7.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.2",
-    "react-spinners": "^0.6.1",
-    "typescript": "^3.6.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "server": "node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "mysql": "^2.17.1"
   }
 }
