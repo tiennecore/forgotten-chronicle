@@ -92,6 +92,7 @@ router.get('/api/race/:id',(req,res) => {
 })
 router.get('/api/races',(req,res) => {
     var QueryStringRace="select id,name from race;"
+    console.log("pistache")
     pool.query(QueryStringRace,(err, result, fieds) => {
         if (err){
           console.log("failed to load:" + err)
