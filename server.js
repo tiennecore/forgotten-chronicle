@@ -1,12 +1,8 @@
 //express part
 express = require('express')
 app = express()
-router = require('./routes/races')
-path = require('path')
-cors = require("cors")
 bodyParser = require("body-parser")
 logger = require("morgan")
-const proxy = require("http-proxy-middleware")
 port = process.env.PORT || 5000;
 
 
