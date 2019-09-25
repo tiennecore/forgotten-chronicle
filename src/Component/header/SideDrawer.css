@@ -15,4 +15,9 @@
   .side-drawer.open {
     transform: translateX(0);
   }
+
+  .SideSelection{
+    text-align: center;
+    border-bottom : 1px black solid; 
+  }
   

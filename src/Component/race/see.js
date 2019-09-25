@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import RaceView from './raceView'
 import './race.css';
+import Loading from '../Function/loading'
+
 
 class SeeRaces extends Component {
   
@@ -38,7 +40,7 @@ class SeeRaces extends Component {
           <div className='racesDiv'>
             {raceComponents}
           </div>
-        :null}
+        :<Loading/>}
       </div>
     );
   }

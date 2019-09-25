@@ -1,6 +1,7 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './SideDrawer.css';
 import SeeRaces from '../race/see'
+
 export default class sideDrawer extends React.Component{
     constructor(){
         super()
@@ -28,7 +29,7 @@ export default class sideDrawer extends React.Component{
         }
         return(
             <nav className={drawerClasses}>
-                <div onClick={this.handleclickselection}>
+                <div className = 'SideSelection' onClick={this.handleclickselection}>
                     <p>
                         Race
                     </p>
