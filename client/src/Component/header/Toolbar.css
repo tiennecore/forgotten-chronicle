@@ -1,0 +1,27 @@
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #521751;
+  height: 56px;
+}
+
+.toolbarNavigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.toolbarLogo {
+  margin-left: 1rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbarNavigationItem {
+color: white;
+}
