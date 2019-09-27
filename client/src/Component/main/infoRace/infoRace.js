@@ -15,7 +15,12 @@ class InfoRace extends React.Component {
     this.fetchData=this.fetchData.bind(this)
   }
   fetchData(){
-    var stringrequest="http://localhost:5000/api/race/"+this.state.raceId ||"https://tiennelord.herokuapp.com/api/race/"+this.state.raceId
+    var stringrequest
+    if(process.env.NODE_ENV !== 'production'){
+      stringrequest="http://localhost:5000/api/race/"+this.state.raceId
+    }else{
+      stringrequest="https://tiennelord.herokuapp.com/api/race/"+this.state.raceId
+    }
     fetch(stringrequest)
     .then(response => response.json())
     .then( responseJson=> {

@@ -9,13 +9,18 @@ export default class InfoRaceCarac extends React.Component {
   }
   componentDidMount() {
     if(this.props.raceId!==undefined){
-      var stringrequest="http://localhost:5000/api/raceInfoCarac/"+this.props.raceId||"https://tiennelord.herokuapp.com/api/raceInfoCarac/"+this.props.raceId
-    fetch(stringrequest)
-    .then(response => response.json())
-    .then( responseJson=> {
-      this.setState({infoRaceCarac:responseJson[0]})
-    },)
-    }
+      var stringrequest
+      if(process.env.NODE_ENV !== 'production'){
+        stringrequest="http://localhost:5000/api/raceInfoCarac/"+this.props.raceId
+      }else{
+        stringrequest="https://tiennelord.herokuapp.com/api/raceInfoCarac/"+this.props.raceId
+      }
+      fetch(stringrequest)
+      .then(response => response.json())
+      .then( responseJson=> {
+        this.setState({infoRaceCarac:responseJson[0]})
+      },)
+      }
     
   }
   
