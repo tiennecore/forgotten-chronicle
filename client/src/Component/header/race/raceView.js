@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import { MdChevronRight } from "react-icons/md";
 import { IconContext } from "react-icons";
-import InfoRace from './info/infoRace'
 
 export default class RaceView extends Component {
     constructor (){
@@ -12,8 +11,8 @@ export default class RaceView extends Component {
         this.handleClickInfoRace=this.handleClickInfoRace.bind(this)
     }
     handleClickInfoRace(){
-        var pistache= <InfoRace raceId={this.props.raceId} />
-        this.props.main(pistache)
+        this.props.drawer()
+        this.props.main(this.props.raceId)
     }
 
     render (){

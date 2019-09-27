@@ -8,18 +8,45 @@ class InfoRace extends React.Component {
   constructor(){
     super()
     this.state = {
-      infoRacePrincipal : {}
+      infoRacePrincipal : {},
+      raceId:null,
+      load:true
     }
+    this.fetchData=this.fetchData.bind(this)
   }
-  componentDidMount() {
-    var stringrequest="https://tiennelord.herokuapp.com/api/race/"+this.props.raceId
+  fetchData(){
+    var stringrequest="http://localhost:5000/api/race/"+this.state.raceId ||"https://tiennelord.herokuapp.com/api/race/"+this.state.raceId
     fetch(stringrequest)
     .then(response => response.json())
     .then( responseJson=> {
-      this.setState({infoRacePrincipal:responseJson[0]})
+      this.setState({infoRacePrincipal:responseJson[0],load:true})
     },)
   }
+  static getDerivedStateFromProps(props, state){
+    if(props.raceId !== state.raceId && props.raceId !== null){
+      return{
+        raceId:props.raceId,
+        load:false
+      }
+    }
+    return null
+  }
   
+  shouldComponentUpdate(nextProps,nextState){
+    if(this.state.load !==nextState.load ){
+      return true
+    }else{
+      return false
+    }
+  }
+  componentDidUpdate(prevProps, prevState){
+    this.fetchData()
+  }
+  componentDidMount(){
+    this.fetchData()
+
+  }
+
   render (){
     return (
       <div className='infoRaceDiv'>

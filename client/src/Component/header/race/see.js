@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import RaceView from './raceView'
 import './race.css';
-import Loading from '../Function/loading'
+import Loading from '../../Function/loading'
 
 
 class SeeRaces extends Component {
@@ -17,11 +17,10 @@ class SeeRaces extends Component {
     
   
     componentDidMount() {
-      var stringrequest="https://tiennelord.herokuapp.com/api/races"
+      var stringrequest= "http://localhost:5000/api/races" || "https://tiennelord.herokuapp.com/api/races"
       fetch(stringrequest)
       .then(response => response.json())
       .then( responseJson=> {
-        console.log(stringrequest)
         this.setState({load:true,races:responseJson})
 
       })
@@ -30,7 +29,8 @@ class SeeRaces extends Component {
   render (){
     const raceComponents = this.state.races.map(race=>
       <RaceView 
-        key={race.id} 
+        key={race.id}
+        drawer={this.props.drawer} 
         raceId={race.id} 
         name={race.name}
         main={this.props.main} 

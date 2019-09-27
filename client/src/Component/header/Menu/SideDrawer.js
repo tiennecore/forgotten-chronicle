@@ -24,8 +24,11 @@ export default class sideDrawer extends React.Component{
             drawerClasses = 'side-drawer open';
         }
         if (this.state.selected){
-            
-            selected=<SeeRaces main={this.props.main} />
+            selected=
+            <SeeRaces
+                drawer={this.handleclickselection} 
+                main={this.props.main} 
+            />
         }
         return(
             <nav className={drawerClasses}>

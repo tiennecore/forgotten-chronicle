@@ -9,7 +9,7 @@ class InfoRaceNoms extends React.Component {
   }
   componentDidMount() {
     if (this.props.raceId !== undefined){
-        var stringrequest="https://tiennelord.herokuapp.com/api/raceInfoNames/"+this.props.raceId
+        var stringrequest="http://localhost:5000/api/raceInfoNames/"+this.props.raceId||"https://tiennelord.herokuapp.com/api/raceInfoNames/"+this.props.raceId
         fetch(stringrequest)
         .then(response => response.json())
         .then( responseJson=> {
