@@ -12,18 +12,27 @@ class SeeRaces extends Component {
         load:false,
         races : []
       }
+      this.fetchData=this.fetchData.bind(this)
     }
-
-    
-  
-    componentDidMount() {
-      var stringrequest= "http://localhost:5000/api/races" || "https://tiennelord.herokuapp.com/api/races"
+    fetchData(){
+      var stringrequest
+      if(process.env.NODE_ENV !== 'production'){
+        stringrequest="http://localhost:5000/api/races"
+      }else{
+        stringrequest="https://tiennelord.herokuapp.com/api/races"
+      }
       fetch(stringrequest)
       .then(response => response.json())
       .then( responseJson=> {
         this.setState({load:true,races:responseJson})
 
       })
+    }
+
+    
+  
+    componentDidMount() {
+      this.fetchData()
     }
   
   render (){
